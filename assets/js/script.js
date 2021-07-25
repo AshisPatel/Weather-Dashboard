@@ -2,8 +2,13 @@ const curWeathContEl = document.querySelector("#current-weather-container");
 const dailyWeathContEl = document.querySelector("#daily-weather-container");
 const citySearchFormEl = document.querySelector("#city-search-form");  
 const cityEl = document.querySelector("#city"); 
+const searchesEl = document.querySelector("#searches"); 
 
 let city = ""; 
+
+let searches = []; 
+
+// Function to add searched terms to the search history 
 
 // Function to get coorindates by making an API request to Geocoding based on a text location
 // This function needs more handling if a valid city name is not typed in....
@@ -44,6 +49,8 @@ const getWeather = function(lat, lon) {
 // Function to display weather
 // Add RESET to the display functions so that cities do not just stack! 
 const displayCurrentWeather = function(current) {
+    // Clear old display
+    curWeathContEl.textContent = ""; 
     // Display current weather information
     const h2El = document.createElement("h2"); 
     const date = dayjs.unix(current.dt).format("M/DD/YYYY"); 
@@ -91,6 +98,8 @@ const displayCurrentWeather = function(current) {
 }
 // Function will display daily weather for the next 5 days of the week 
 const displayDailyWeather = function(daily) {
+    // Clear old content
+    dailyWeathContEl.textContent = ""; 
     for(let i=1; i < 6; i++) {
         const dailyCardEl = document.createElement("div");
         dailyCardEl.classList = "col-2 card bg bg-dark text-light";
@@ -122,10 +131,45 @@ const displayDailyWeather = function(daily) {
     }
 }
 
+const saveSearches = function() {
+    localStorage.setItem("searches", JSON.stringify(searches)); 
+}
+
+const loadSearches = function() {
+    searches = JSON.parse(localStorage.getItem("searches", searches)); 
+    // Remove old content
+    searchesEl.textContent = ""; 
+    
+    searches.forEach(search =>  {
+        const liEl = document.createElement("li");
+        const buttonEl = document.createElement("button");
+        buttonEl.classList = "";
+        buttonEl.textContent = search; 
+        liEl.appendChild(buttonEl);
+        searchesEl.appendChild(liEl); 
+    }); 
+       
+
+}
+
+const addToSearches = function(city) {
+    // Check if the prevSearches already includes the current search location
+    if (searches.includes(city))
+    {
+        return; 
+    }
+
+    searches.push(city); 
+    saveSearches(); 
+    loadSearches(); 
+}
+
+
 const searchSubmitHandler = function(event) {
     // Disables the refresh upon event submission
     event.preventDefault(); 
     city = cityEl.value.trim(); 
+    addToSearches(city); 
     getLocationCoordinates(city); 
 }
 
@@ -134,3 +178,8 @@ const searchSubmitHandler = function(event) {
 //getLocationCoordinates(city);  
 
 citySearchFormEl.addEventListener("submit", searchSubmitHandler); 
+
+// Load searches list on load and populate weather for item at the top of the list. 
+loadSearches(); 
+city = searches[0]; 
+getLocationCoordinates(searches[0]); 
