@@ -87,9 +87,35 @@ const displayCurrentWeather = function(current) {
     
 }
 // Function will display daily weather for the next 5 days of the week 
-const displayDailyWeather = function() {
-    for(let i=0; i < 4; i++) {
+const displayDailyWeather = function(daily) {
+    for(let i=1; i < 6; i++) {
+        const dailyCardEl = document.createElement("div");
+        dailyCardEl.classList = "col-2 card bg bg-dark text-light";
         
+        const date = dayjs.unix(daily[i].dt).format("M/DD/YYYY"); 
+        const cardTitleEl = document.createElement("h3");
+        cardTitleEl.textContent = date; 
+
+        dailyCardEl.appendChild(cardTitleEl); 
+
+        const weatherIcon = document.createElement("img");
+        weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${daily[i].weather[0].icon}@2x.png` );
+        weatherIcon.setAttribute("alt", `${daily[i].weather[0].description}`); 
+        
+        dailyCardEl.appendChild(weatherIcon); 
+
+        const ulEl = document.createElement("ul");
+        ulEl.classList = "weather-list"; 
+        // Currently calculating the average temp???
+        const avgDailyTemp = (daily[i].temp.min + daily[i].temp.max)/2;
+        ulEl.innerHTML = `
+        <li>Temp: ${avgDailyTemp} °F</li>
+        <li>Wind: ${daily[i].wind_speed} MPH</li>
+        <li>Humidity: ${daily[i].humidity} %</li>`
+
+        dailyCardEl.appendChild(ulEl); 
+
+        dailyWeathContEl.appendChild(dailyCardEl); 
     }
 }
 
