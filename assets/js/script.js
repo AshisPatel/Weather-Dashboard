@@ -1,9 +1,12 @@
 const curWeathContEl = document.querySelector("#current-weather-container");
 const dailyWeathContEl = document.querySelector("#daily-weather-container");
+const citySearchFormEl = document.querySelector("#city-search-form");  
+const cityEl = document.querySelector("#city"); 
 
-const city = "London"; 
+let city = ""; 
 
 // Function to get coorindates by making an API request to Geocoding based on a text location
+// This function needs more handling if a valid city name is not typed in....
 const getLocationCoordinates = function(city) {
     // Currently limited to fetching one result
     let apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=8f5c8e0438b4ba0bdedddf4274159607`;
@@ -39,7 +42,7 @@ const getWeather = function(lat, lon) {
 }
 
 // Function to display weather
-
+// Add RESET to the display functions so that cities do not just stack! 
 const displayCurrentWeather = function(current) {
     // Display current weather information
     const h2El = document.createElement("h2"); 
@@ -56,7 +59,7 @@ const displayCurrentWeather = function(current) {
     const ulEl = document.createElement("ul");
     ulEl.classList = "weather-list"
     ulEl.innerHTML = `
-    <li>Temp: ${current.temp} °F</li>
+    <li>Temp: ${Math.ceil(current.temp)} °F</li>
     <li>Wind: ${current.wind_speed} MPH</li>
     <li>Humidity: ${current.humidity} %</li>`
 
@@ -107,7 +110,7 @@ const displayDailyWeather = function(daily) {
         const ulEl = document.createElement("ul");
         ulEl.classList = "weather-list"; 
         // Currently calculating the average temp???
-        const avgDailyTemp = (daily[i].temp.min + daily[i].temp.max)/2;
+        const avgDailyTemp = Math.ceil((daily[i].temp.min + daily[i].temp.max)/2);
         ulEl.innerHTML = `
         <li>Temp: ${avgDailyTemp} °F</li>
         <li>Wind: ${daily[i].wind_speed} MPH</li>
@@ -119,4 +122,15 @@ const displayDailyWeather = function(daily) {
     }
 }
 
-getLocationCoordinates(city);  
+const searchSubmitHandler = function(event) {
+    // Disables the refresh upon event submission
+    event.preventDefault(); 
+    city = cityEl.value.trim(); 
+    getLocationCoordinates(city); 
+}
+
+
+
+//getLocationCoordinates(city);  
+
+citySearchFormEl.addEventListener("submit", searchSubmitHandler); 
