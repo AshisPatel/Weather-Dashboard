@@ -19,12 +19,19 @@ const getLocationCoordinates = function (city) {
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-                getWeather(data[0].lat, data[0].lon);
+                // If the returned data is not an empty array... 
+                if (data.length > 0 ) {
+                    addToSearches(city);
+                    getWeather(data[0].lat, data[0].lon);
+                }
+                else {
+                    alert("That is not a valid location!"); 
+                }
             });
         }
-        else {
-            alert("That is not a valid location!");
-        }
+    })
+    .catch(function(error){
+        alert("Unable to connect to OpenWeather"); 
     });
 }
 
@@ -35,7 +42,6 @@ const getWeather = function (lat, lon) {
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-                console.log(data);
                 displayCurrentWeather(data.current);
                 displayDailyWeather(data.daily);
             });
@@ -43,11 +49,10 @@ const getWeather = function (lat, lon) {
         else {
             alert("There was a problem retrieving the weather for that location!");
         }
-    });
+    })
 }
 
 // Function to display weather
-// Add RESET to the display functions so that cities do not just stack! 
 const displayCurrentWeather = function (current) {
     // Clear old display
     curWeathContEl.textContent = "";
@@ -158,7 +163,6 @@ const addToSearches = function (city) {
     // Check if the prevSearches already includes the current search location
     if (searches.includes(city)) {
         const oldIndex = searches.indexOf(city); 
-        console.log(oldIndex); 
         searches.splice(oldIndex,1); 
     }
     // Add latest search to the top of the array 
@@ -184,14 +188,14 @@ const searchSubmitHandler = function (event) {
     // Reset the form to clear out the input form 
     citySearchFormEl.reset(); 
     getLocationCoordinates(city);
-    addToSearches(city);
+    //addToSearches(city);
 }
 
 const cityClickHandler = function (event) {
     if (event.target.matches("button")) {
         city = event.target.textContent; 
         getLocationCoordinates(city); 
-        addToSearches(city); 
+        //addToSearches(city); 
     }
 }
 
