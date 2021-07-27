@@ -42,6 +42,7 @@ const getWeather = function (lat, lon) {
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
+                console.log(data); 
                 displayCurrentWeather(data.current);
                 displayDailyWeather(data.daily);
             });

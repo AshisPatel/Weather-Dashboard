@@ -1,6 +1,85 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+/*  Color palette variables */
+::root {
+    --black: #1a1a1d; 
+    --white: #f5f5f5; 
+}
+
+/* General Class Styles Start */
+body {
+    font-family: "Baloo Chettan 2", sans-serif; 
+    background-color: #1a1a1d; 
+} 
+
+/* Weather Dashboard styling */
+header {
+    border : 2px solid #f5f5f5;
+    border-radius: 1rem; 
+    box-shadow: 0 0 10px #ebe9f2;  
+    background-color: rgba(112,174,241,0.5); 
+    text-shadow: 0 0 6px #ebe9f2; 
+    
+}
+
 .weather-list {
     list-style: none;
     line-height: 2; 
     margin-left: 0; 
     padding-left: 0; 
+}
+
+/* Styling for list of searches */
+#searches {
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    text-align:center; 
+}
+
+#searches li {
+    margin: 0.75rem 0; 
+}
+
+#searches li button {
+    width: 100%;
+    border-radius: 0.5rem; 
+    border: none; 
+    box-shadow: 2.5px 1.5px 0 #ebe9f2; 
+    background-color: rgba(112,174,241,0.5); 
+    color: #ebe9f2; 
+
+    transition: background-color 250ms ease-in; 
+}
+
+#searches li button:hover {
+    background-color: rgba(238, 145, 164,1);
+}
+
+/* Search form styling */
+
+#city-search-form {
+    background-color: rgba(112,174,241,0.5); 
+    border: 2px solid #f5f5f5; 
+    border-radius: 0.5rem;
+  
+}
+
+#submit-btn{
+    border-radius: 0.5rem;
+    background-color: #70aef1; 
+    border: 2px solid #f5f5f5; 
+    color: #f5f5f5; 
+    padding: 0.25rem; 
+    width: 100%; 
+    box-shadow: 0 0 0 #ebe9f2;; 
+    transition: background-color 250ms ease-in;
+    transition: box-shadow 250ms ease-in;  
+}
+
+#submit-btn:hover {
+    background-color: rgba(238, 145, 164,1);
+    box-shadow: 0 0 10px #ebe9f2;
 }
