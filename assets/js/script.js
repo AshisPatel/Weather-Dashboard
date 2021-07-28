@@ -150,7 +150,7 @@ const saveSearches = function () {
 const loadSearches = function () {
     searches = JSON.parse(localStorage.getItem("searches", searches));
     if (!searches) {
-        searches = []; 
+        searches = ["Austin"]; 
     }
     // Remove old content
     searchesEl.textContent = "";
