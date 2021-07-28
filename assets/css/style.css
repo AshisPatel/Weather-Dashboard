@@ -18,13 +18,15 @@
     background-color: rgba(112,174,241,0.5); 
     border: 2px solid #f5f5f5; 
     border-radius: 0.5rem; 
+    box-shadow: 0 0 6px #ebe9f2; 
 }
 
 .small-font {
     font-size: 12px;
 }
 
-/* General Class Styles Start */
+
+/* General Elements Start */
 body {
     font-family: "Baloo Chettan 2", sans-serif; 
     background-color: #36454f; 

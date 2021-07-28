@@ -108,6 +108,7 @@ const displayCurrentWeather = function (current) {
 const displayDailyWeather = function (daily) {
     // Clear old content
     dailyWeathContEl.textContent = "";
+    // Grabs daily[1] -> daily[6], which are the next 5-days 
     for (let i = 1; i < 6; i++) {
         const dailyCardEl = document.createElement("div");
         dailyCardEl.classList = "col-2 card text-light panel-bl";
@@ -174,6 +175,14 @@ const addToSearches = function (city) {
     }
     // Add latest search to the top of the array 
     searches.unshift(city);
+
+    // Set maximum number of old searches to keep
+    const maxSearches = 8; 
+    // Check to see if the number of searches is greater than the maximum number of searches
+    if (searches.length > 8) {
+        // Removes last element in searches array 
+        searches.pop(); 
+    }
     saveSearches();
     loadSearches();
 }
