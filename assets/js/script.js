@@ -58,19 +58,22 @@ const displayCurrentWeather = function (current) {
     // Clear old display
     curWeathContEl.textContent = "";
     // Display current weather information
-    const h2El = document.createElement("h2");
+    const h3El = document.createElement("h3");
+    h3El.classList = "ms-3 mt-0 mb-0"; 
     const date = dayjs.unix(current.dt).format("M/DD/YYYY");
-    h2El.textContent = `${city} (${date})`;
+    h3El.textContent = `${city} (${date})`;
 
     const iconEl = document.createElement("img");
     iconEl.setAttribute("src", `http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`)
     iconEl.setAttribute("alt", `${current.weather[0].description}`);
+    iconEl.setAttribute("width", "60");
+    iconEl.setAttribute("height", "60"); 
 
-    h2El.appendChild(iconEl);
-    curWeathContEl.appendChild(h2El);
+    h3El.appendChild(iconEl);
+    curWeathContEl.appendChild(h3El);
     // Display daily weather information
     const ulEl = document.createElement("ul");
-    ulEl.classList = "weather-list"
+    ulEl.classList = "weather-list ms-3"
     ulEl.innerHTML = `
     <li>Temp: ${Math.ceil(current.temp)} °F</li>
     <li>Wind: ${current.wind_speed} MPH</li>
@@ -107,22 +110,25 @@ const displayDailyWeather = function (daily) {
     dailyWeathContEl.textContent = "";
     for (let i = 1; i < 6; i++) {
         const dailyCardEl = document.createElement("div");
-        dailyCardEl.classList = "col-2 card bg bg-dark text-light";
+        dailyCardEl.classList = "col-2 card text-light panel-bl";
 
         const date = dayjs.unix(daily[i].dt).format("M/DD/YYYY");
-        const cardTitleEl = document.createElement("h3");
+        const cardTitleEl = document.createElement("h5");
         cardTitleEl.textContent = date;
+        cardTitleEl.classList= "mt-2"; 
 
         dailyCardEl.appendChild(cardTitleEl);
 
-        const weatherIcon = document.createElement("img");
-        weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${daily[i].weather[0].icon}@2x.png`);
-        weatherIcon.setAttribute("alt", `${daily[i].weather[0].description}`);
+        const iconEl= document.createElement("img");
+        iconEl.setAttribute("src", `http://openweathermap.org/img/wn/${daily[i].weather[0].icon}@2x.png`);
+        iconEl.setAttribute("alt", `${daily[i].weather[0].description}`);
+        iconEl.setAttribute("width", "60");
+        iconEl.setAttribute("height", "60"); 
 
-        dailyCardEl.appendChild(weatherIcon);
+        dailyCardEl.appendChild(iconEl);
 
         const ulEl = document.createElement("ul");
-        ulEl.classList = "weather-list";
+        ulEl.classList = "weather-list small-font";
         // Currently calculating the average temp???
         const avgDailyTemp = Math.ceil((daily[i].temp.min + daily[i].temp.max) / 2);
         ulEl.innerHTML = `
@@ -151,7 +157,7 @@ const loadSearches = function () {
     searches.forEach(search => {
         const liEl = document.createElement("li");
         const buttonEl = document.createElement("button");
-        buttonEl.classList = "";
+        buttonEl.classList = "panel-bl";
         buttonEl.textContent = search;
         liEl.appendChild(buttonEl);
         searchesEl.appendChild(liEl);
@@ -199,8 +205,6 @@ const cityClickHandler = function (event) {
         //addToSearches(city); 
     }
 }
-
-
 
 citySearchFormEl.addEventListener("submit", searchSubmitHandler);
 searchesEl.addEventListener("click", cityClickHandler); 

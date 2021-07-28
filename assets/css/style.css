@@ -2,34 +2,40 @@
     margin: 0;
     padding: 0; 
 }
-/*  Color palette variables */
-::root {
-    --black: #1a1a1d; 
-    --white: #f5f5f5; 
-}
 
-/* General Class Styles Start */
-body {
-    font-family: "Baloo Chettan 2", sans-serif; 
-    background-color: #1a1a1d; 
-} 
 
-/* Weather Dashboard styling */
-header {
-    border : 2px solid #f5f5f5;
-    border-radius: 1rem; 
-    box-shadow: 0 0 10px #ebe9f2;  
-    background-color: rgba(112,174,241,0.5); 
-    text-shadow: 0 0 6px #ebe9f2; 
-    
-}
+/* General Multi-Use Class Styles */
 
+/* For Weather Property Lists */
 .weather-list {
     list-style: none;
     line-height: 2; 
     margin-left: 0; 
     padding-left: 0; 
 }
+/* For General Containers */
+.panel-bl {
+    background-color: rgba(112,174,241,0.5); 
+    border: 2px solid #f5f5f5; 
+    border-radius: 0.5rem; 
+}
+
+.small-font {
+    font-size: 12px;
+}
+
+/* General Class Styles Start */
+body {
+    font-family: "Baloo Chettan 2", sans-serif; 
+    background-color: #36454f; 
+} 
+
+/* Weather Dashboard styling */
+header {
+    box-shadow: 0 0 10px #ebe9f2;  
+    text-shadow: 0 0 6px #ebe9f2;   
+}
+
 
 /* Styling for list of searches */
 #searches {
@@ -45,28 +51,22 @@ header {
 
 #searches li button {
     width: 100%;
-    border-radius: 0.5rem; 
     border: none; 
     box-shadow: 2.5px 1.5px 0 #ebe9f2; 
-    background-color: rgba(112,174,241,0.5); 
     color: #ebe9f2; 
-
     transition: background-color 250ms ease-in; 
+    transition: box-shadow 50ms ease-in; 
 }
 
 #searches li button:hover {
     background-color: rgba(238, 145, 164,1);
 }
 
-/* Search form styling */
-
-#city-search-form {
-    background-color: rgba(112,174,241,0.5); 
-    border: 2px solid #f5f5f5; 
-    border-radius: 0.5rem;
-  
+#searches li button:active {
+    box-shadow: 1.5px 1.5px #C0C0C0;  
 }
 
+/* Search form styling */
 #submit-btn{
     border-radius: 0.5rem;
     background-color: #70aef1; 
@@ -76,10 +76,13 @@ header {
     width: 100%; 
     box-shadow: 0 0 0 #ebe9f2;; 
     transition: background-color 250ms ease-in;
-    transition: box-shadow 250ms ease-in;  
+    transition: box-shadow 50ms;  
 }
 
 #submit-btn:hover {
     background-color: rgba(238, 145, 164,1);
+}
+
+#submit-btn:active {
     box-shadow: 0 0 10px #ebe9f2;
 }
