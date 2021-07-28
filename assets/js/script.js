@@ -14,7 +14,7 @@ let searches = [];
 // This function needs more handling if a valid city name is not typed in....
 const getLocationCoordinates = function (city) {
     // Currently limited to fetching one result
-    let apiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=8f5c8e0438b4ba0bdedddf4274159607`;
+    let apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=8f5c8e0438b4ba0bdedddf4274159607`;
 
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
