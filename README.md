@@ -16,7 +16,7 @@ The submitted city name is passed into a fetch request to OpenWeather's **Geocod
 
 The current weather and daily weather displays are then dynamically generated and placed onto a static-html grid created using Bootstrap. 
 
-### Previous Searches Functionaliy
+### Previous Searches Functionality
 
 The old search history has been manually limited to only hold 8 previous searches. This is simply a design choice to keep the interface looking neat and prevent the search history from growing too long. 
 
@@ -36,7 +36,7 @@ https://ashispatel.github.io/Weather-Dashboard-Week-6-Challenge/
 
 Thank you for taking the time to check out my Weather Dashboard and README! In this week's challenge, I learned to leverage the power of fetch requests and external APIs! Its like driving a car, rather than trying to build a car. It sure beat me having to go out and test the humidity myself. Please enjoy the fun fact below and a random gif from my collection of things that make me laugh! Hopefully it makes you laugh too and gives you something fun to share with a friend! :) 
 
-**Fun Fact**: A 40 % chance of rain does not mean that there is a 40 % chance that rain will occur in a location, but rather 40 % of the location's area is recieving rain. I thought I was being scammed by the news, turns out I just have *really bad luck*. 
+**Fun Fact**: A 40 % chance of rain does not mean that there is a 40 % chance that rain will occur in a location, but rather 40 % of the location's area is receiving rain. I thought I was being scammed by the news, turns out I just have *really bad luck*. 
 
 ![Animated man slaps dog and gets slapped back](https://github.com/AshisPatel/Weather-Dashboard-Week-6-Challenge/blob/main/assets/images/dog-slap.gif)
 
