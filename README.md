@@ -2,7 +2,7 @@
 
 ## Purpose
 
-![Searching various cities and switching them using buttons to display weather on the dashboard](#)
+![Searching various cities and switching them using buttons to display weather on the dashboard](https://github.com/AshisPatel/Weather-Dashboard-Week-6-Challenge/blob/main/assets/images/weather-dashboard-preview.gif)
 
 The Weather Dashboard is a simple interface that displays the current weather and 5-day future forecast for a city. The city can be searched via text-input or selected from a list of past searches on the local machine. For more details on the functionality, please check out the *Function* section. 
 
@@ -34,9 +34,15 @@ https://ashispatel.github.io/Weather-Dashboard-Week-6-Challenge/
 
 ## End Note - A Thank You to the Reader 
 
-Thank you for taking the time to check out my Weather Dashboard and README! In this week's challenge, I learned the fun of dealing with fetch requests! It's really nifty to be able to kind of just *ask for something* and the website hands it over. It sure beat me having to go out and test the humidity myself. Please enjoy the fun fact below and a random gif from my collection of things that make me laugh! Hopefully it makes you laugh too and gives you something fun to share with a friend! :) 
+Thank you for taking the time to check out my Weather Dashboard and README! In this week's challenge, I learned to leverage the power of fetch requests and external APIs! Its like driving a car, rather than trying to build a car. It sure beat me having to go out and test the humidity myself. Please enjoy the fun fact below and a random gif from my collection of things that make me laugh! Hopefully it makes you laugh too and gives you something fun to share with a friend! :) 
 
-**Fun Fact**:
+**Fun Fact**: A 40 % chance of rain does not mean that there is a 40 % chance that rain will occur in a location, but rather 40 % of the location's area is recieving rain. I thought I was being scammed by the news, turns out I just have *really bad luck*. 
+
+![Animated man slaps dog and gets slapped back](https://github.com/AshisPatel/Weather-Dashboard-Week-6-Challenge/blob/main/assets/images/dog-slap.gif)
+
+*Animal abuse is not ok*
+
+
 
 
 

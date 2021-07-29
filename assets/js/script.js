@@ -43,6 +43,7 @@ const getWeather = function (lat, lon) {
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
+                console.log(data); 
                 // Call function to take current weather information and display on the current-weather panel
                 displayCurrentWeather(data.current);
                 // Call function to take daily weather information and display on the daily-weather panel 
@@ -90,6 +91,7 @@ const displayCurrentWeather = function (current) {
 
     const uvCategoryEl = document.createElement("span");
     const uvi = current.uvi;
+    console.log(uvi); 
     uvCategoryEl.classList = "p-1 rounded-pill text-light bg";
     // Check UVI categories to give it a colored-background based on the three categories 
     if (uvi <= 2) {
