@@ -202,7 +202,7 @@ const addToSearches = function (city) {
     // Set maximum number of old searches to keep
     const maxSearches = 8;
     // Check to see if the number of searches is greater than the maximum number of searches
-    if (searches.length > 8) {
+    if (searches.length > maxSearches) {
         // Removes last element in searches array 
         searches.pop();
     }
