@@ -74,7 +74,7 @@ const displayCurrentWeather = function (current) {
 
     // Grab and format icon based on the weather 
     const iconEl = document.createElement("img");
-    iconEl.setAttribute("src", `http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`)
+    iconEl.setAttribute("src", `https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`)
     iconEl.setAttribute("alt", `${current.weather[0].description}`);
     iconEl.setAttribute("width", "60");
     iconEl.setAttribute("height", "60");
@@ -137,7 +137,7 @@ const displayDailyWeather = function (daily) {
         dailyCardEl.appendChild(cardTitleEl);
         // Create the weather icon based on current weather
         const iconEl = document.createElement("img");
-        iconEl.setAttribute("src", `http://openweathermap.org/img/wn/${daily[i].weather[0].icon}@2x.png`);
+        iconEl.setAttribute("src", `https://openweathermap.org/img/wn/${daily[i].weather[0].icon}@2x.png`);
         iconEl.setAttribute("alt", `${daily[i].weather[0].description}`);
         iconEl.setAttribute("width", "60");
         iconEl.setAttribute("height", "60");
