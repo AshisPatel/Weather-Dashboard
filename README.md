@@ -37,14 +37,9 @@ The local weather button uses the navigator geolocation API call to retrieve the
 https://ashispatel.github.io/Weather-Dashboard-Week-6-Challenge/
 
 ## Current Issues 
-<<<<<<< HEAD
 
 * Prompt for user location says "This file wants to" as opposed to "This file wants to: Access your location". UNLESS the user tabs out and tabs back in, then the prompt will display the proper message. 
 * Once the location is denied, the button cannot be re-used to search for the local location. Currently checking if there is a way to let the button re-ask for the persmission setting.
-=======
-* Prompt for user location says "This file wants to" as opposed to "This file wants to: Access your location". UNLESS the user tabs out and tabs back in, then the prompt will display the proper message. 
-* Once the location is denied, the button cannot be re-used to search for the local location. Currently checking if there is a way to let the button re-ask for the persmission setting. 
->>>>>>> da2fac17fd5a122f7a6373ad2284a7020afe2d1d
 
 ## End Note - A Thank You to the Reader 
 
