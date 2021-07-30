@@ -22,6 +22,10 @@ The old search history has been manually limited to only hold 8 previous searche
 
 When a city is submitted to the functions to get the weather data, another function will check to see if the city has previously been searched. If the city *has not* been searched before, it will be added to the top of the list. If the new addition causes the city to grow past 8 items, the last item in the search list will be removed (this should be the oldest search). If the city *has* been searched before, then it will be moved up to the top of the search list upon a new search of the same city. 
 
+### Local Weather Button Functionality
+
+The local weather button uses the navigator geolocation API call to retrieve the user's coordinates, if they allow the location access to their position. By clicking on the "Local Weather" button, the browser will prompt the user if they would like to provide their location. If they choose not to, then an alert will pop-up informing the user that their location could not be retrieved without their consent. If approved, the name of their city will be obtained using OpenWeather's GeoCoding API by performing a reverse-geolocate. Then, the weather information will be displayed. 
+
 ## Built With
 
 * HTML
@@ -31,6 +35,11 @@ When a city is submitted to the functions to get the weather data, another funct
 ## Website
 
 https://ashispatel.github.io/Weather-Dashboard-Week-6-Challenge/
+
+## Current Issues 
+
+* Even if the user has already approved for their location to be accessed, the local weather button continues to prompt the user if they want to allow their location to be accessed by the site. 
+* Prompt for user location says "This file wants to" as opposed to "This file wants to: Access your location". UNLESS the user tabs out and tabs back in, then the prompt will display the proper message. 
 
 ## End Note - A Thank You to the Reader 
 
