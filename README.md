@@ -38,8 +38,8 @@ https://ashispatel.github.io/Weather-Dashboard-Week-6-Challenge/
 
 ## Current Issues 
 
-* Even if the user has already approved for their location to be accessed, the local weather button continues to prompt the user if they want to allow their location to be accessed by the site. 
 * Prompt for user location says "This file wants to" as opposed to "This file wants to: Access your location". UNLESS the user tabs out and tabs back in, then the prompt will display the proper message. 
+* Once the location is denied, the button cannot be re-used to search for the local location. Currently checking if there is a way to let the button re-ask for the persmission setting.
 
 ## End Note - A Thank You to the Reader 
 
