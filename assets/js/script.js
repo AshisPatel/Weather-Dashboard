@@ -246,12 +246,22 @@ const locationDenied = function() {
     alert("You have denied access to your location. To see the local weather, please click the button again and allow access to your location."); 
 }
 
+const formatCityName = function(cityName) {
+    words = cityName.split(" ");
+    console.log(words); 
+    for(let i=0; i<words.length; i++){
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1).toLowerCase();
+    }
+ 
+    return words.join(" "); 
+}
+
 // Function to grab city name and look up weather on submit event
 const searchSubmitHandler = function (event) {
     // Disables the refresh upon event submission
     event.preventDefault();
     // Grab text value that is in the enter
-    city = cityInputEl.value.trim();
+    city = formatCityName(cityInputEl.value.trim());
     // Reset the form to clear out the input form 
     citySearchFormEl.reset();
     // Call the function that will get the weather information 
