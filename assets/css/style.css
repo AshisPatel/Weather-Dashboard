@@ -70,7 +70,8 @@ header {
 }
 
 /* Search form styling */
-#submit-btn{
+
+.btn-blue {
     border-radius: 0.5rem;
     background-color: #70aef1; 
     border: 2px solid #f5f5f5; 
@@ -81,11 +82,10 @@ header {
     transition: background-color 250ms ease-in;
     transition: box-shadow 50ms;  
 }
-
-#submit-btn:hover {
+.btn-blue:hover {
     background-color: rgba(238, 145, 164,1);
 }
 
-#submit-btn:active {
+.btn-blue:active {
     box-shadow: 0 0 10px #ebe9f2;
 }
