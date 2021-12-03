@@ -1,4 +1,4 @@
-# Weather-Dashboard-Week-6-Challenge
+# Weather-Dashboard
 
 ## Purpose
 
@@ -34,7 +34,7 @@ The local weather button uses the navigator geolocation API call to retrieve the
 
 ## Website
 
-https://ashispatel.github.io/Weather-Dashboard-Week-6-Challenge/
+https://ashispatel.github.io/Weather-Dashboard/
 
 ## Current Issues 
 
